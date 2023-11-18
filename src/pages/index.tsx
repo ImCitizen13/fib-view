@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useState } from "react";
 import FibonacciView from "~/FibonacciView";
 import { OrientationEnum } from "~/types";
@@ -36,9 +37,27 @@ export default function Home() {
         >Random Orientation</button>
         <h1>{toggleOrientation}</h1>
         <FibonacciView orientation={toggleOrientation}>
-          <div style={{ backgroundColor: "#0A1324" }}></div>
-          <div style={{ backgroundColor: "#FFCA4A" }}></div>
-          <div style={{ backgroundColor: "#899B51" }}></div>
+        <Image
+                height={360}
+                width={480}
+                alt="Upsplash"
+                style={{ width: "100%", height: "100%" }}
+                src="/upsplash/horizontal_2.jpg"
+              />
+              <Image
+                height={360}
+                width={480}
+                alt="Upsplash"
+                style={{ width: "100%", height: "100%" }}
+                src="/upsplash/horizontal_4.jpg"
+              />
+              <Image
+                height={360}
+                width={480}
+                alt="Upsplash"
+                style={{ width: "100%", height: "100%" }}
+                src="/upsplash/horizontal_5.jpg"
+              />
         </FibonacciView>
       </main>
     </>
