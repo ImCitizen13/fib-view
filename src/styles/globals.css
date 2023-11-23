@@ -1,8 +1,23 @@
-/* html,
+:root {
+
+  --text-font-family: "Space Grotesk", sans-serif;
+  --text-font-size: 24px;
+  --text-letter-spacing: -0.8px;
+  --text-line-height: 1.4em;
+  --text-color: black;
+
+  --color-face: #4d9e2f;
+  --color-lips: #ea3524;
+  --color-eyes: #ffffff;
+  --color-puple: #000000;
+  --color-mouthLine: #000000;
+}
+
+html,
 body {
   padding: 0;
   margin: 0;
-} */
+}
 
 
 .flexCol {
@@ -44,7 +59,7 @@ body {
 
 .leftCol{
     background-color: #FBAEAB;
-    height: 100%;
+    height: 100vh;
     width: 62.5%;
     
 }
@@ -56,18 +71,122 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    height: 100%; 
+    height: 100vh; 
     width: 37.5%;
 }
 
 .topRight {
     background-color: #EED1B2;
     min-height: 62.5%;
-    width: 100%;
+    width: 100vw;
 }
 
 .bottomRight {
     background-color: #13C5CD;
     height: 37.5%;
-    width: 100%;
+    width: 100vw;
+    
 }
+
+#container {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#opepen {
+  /* background-color: var(--color-face); */
+  width: min(360px, 720px, 1080px);
+  height: min(120px, 240px, 360px);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.hBorderX {
+  width: 4%;
+}
+.hBorderY {
+  width: 3.2%;
+}
+.vBorderX {
+  height: 10.76%;
+}
+.vBorderY {
+  height: 7.68%;
+}
+.vBorderZ {
+  height: 42%;
+}
+
+#eyes {
+  height: 37.5%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  /*   position: relative; */
+}
+
+.eye {
+  width: 44.4%;
+  height: 100%;
+  /* background-color: var(--color-eyes); */
+}
+
+.puple {
+  width: 37.5%;
+  height: 100%;
+  /* background-color: var(--color-puple); */
+  position: relative;
+}
+
+#lips {
+  width: 100%;
+  height: 33.3%;
+  /* background-color: var(--color-lips); */
+}
+
+#mouth {
+  min-width: 100%;
+  height: 100%;
+}
+
+#mouthContainer {
+  width: 92%;
+  height: 100%;
+}
+
+#mouthLine {
+  width: 100%;
+  height: 16%;
+  /* background-color: var(--color-mouthLine); */
+}
+
+#colorPalette {
+  width: 170px;
+  height: 105px;
+  /* gap: 3px; */
+  background-color: gray;
+  font-size: small;
+}
+
+#leftPalette {
+  width: 61%;
+  height: 100%;
+}
+
+#rightPalette {
+  width: 38%;
+  height: 100%;
+}
+
+#topRightPalette {
+  height: 61%;
+  width: 100%;
+}
+
+#bottomRightPalette {
+  height: 38%;
+  width: 100%;
+}
+
