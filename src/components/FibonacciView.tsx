@@ -8,6 +8,7 @@ import {
 } from "react";
 import BlockView, { orientView } from "./BlockView";
 import { OrientationEnum, ViewType } from "./types";
+import { getRandomColor } from "./colors";
 
 export type FibonacciViewProps = {
   orientation: OrientationEnum;
@@ -15,6 +16,7 @@ export type FibonacciViewProps = {
   _changeOrientation?: () => void;
   width: string;
   height: string;
+  colors?: string;
 };
 
 function getOrientedViewResolution(
@@ -29,7 +31,6 @@ function getOrientedViewResolution(
     return { width: width, height: height, flexDirection: "row" };
   }
   return { width: width, height: height, flexDirection: "column" };
-  // return { height: width, width: height, flexDirection: "column" };
 }
 
 // Fib grid has to be modulo 3
@@ -40,6 +41,7 @@ export default function FibonacciView({
   _flip = false,
   width,
   height,
+  colors
 }: PropsWithChildren<FibonacciViewProps>) {
   const viewChildren = Children.toArray(children);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -47,17 +49,18 @@ export default function FibonacciView({
   const smallViewRef = useRef<HTMLDivElement>(null);
   const [smallViewWidth, setSmallViewWidth] = useState<number>(0);
   const [smallViewHeight, setSmallViewHeight] = useState<number>(0);
+  const viewColors =  colors ?? getRandomColor()
+  
   //useLayoutEffect is on the server or something
   useEffect(() => {
-    console.log("Width: ", smallViewRef.current?.offsetWidth);
-    console.log("Height: ", smallViewRef.current?.offsetHeight);
+    // console.log("Width: ", smallViewRef.current?.offsetWidth);
+    // console.log("Height: ", smallViewRef.current?.offsetHeight);
     setSmallViewWidth(smallViewRef.current?.offsetWidth ?? 500);
     setSmallViewHeight(smallViewRef.current?.offsetHeight ?? 500);
   }, [smallViewRef]);
 
   return (
     <div
-      // ref={fibRef}
       id="fibGrid"
       style={getOrientedViewResolution(orientation, width, height)}
     >
@@ -70,6 +73,7 @@ export default function FibonacciView({
             orientation={orientation}
             _className="leftCol"
             viewType={ViewType.largest}
+            color={viewColors[0]}
           >
             {viewChildren[0] && viewChildren[0]}
           </BlockView>
@@ -77,7 +81,11 @@ export default function FibonacciView({
       )}
 
       {/* Large View */}
-      <div className="rightCol" ref={smallViewRef} style={orientView(orientation, ViewType.large)}>
+      <div
+        className="rightCol"
+        // ref={smallViewRef}
+        style={orientView(orientation, ViewType.large)}
+      >
         {/* Medium View */}
         {((orientation === OrientationEnum.horizontal && !flip) ||
           (orientation === OrientationEnum.horizontalReverse && !flip) ||
