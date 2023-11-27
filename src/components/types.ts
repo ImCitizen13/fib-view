@@ -39,5 +39,6 @@ export type BlockViewProps = {
   ParentViewResolution?: ViewResolution,
   _className: string,
   viewType: ViewType,
+  color?: string,
   // _ref?: RefObject<HTMLDivElement>
 }

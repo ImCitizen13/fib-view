@@ -67,12 +67,13 @@ export default function BlockView({
   _className,
   children,
   viewType,
+  color,
 }: PropsWithChildren<BlockViewProps>) {
-  console.log("Size: ", orientView(orientation, viewType))
+  const { width, height } = orientView(orientation, viewType);
   return (
     <div
       className={_className}
-      style={orientView(orientation, viewType)}
+      style={{ width: width, height: height, background: color }}
     >
       {children}
     </div>
