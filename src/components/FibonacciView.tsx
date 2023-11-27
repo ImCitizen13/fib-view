@@ -16,7 +16,7 @@ export type FibonacciViewProps = {
   _changeOrientation?: () => void;
   width: string;
   height: string;
-  colors?: string;
+  colors?: string[];
 };
 
 function getOrientedViewResolution(
@@ -73,7 +73,7 @@ export default function FibonacciView({
             orientation={orientation}
             _className="leftCol"
             viewType={ViewType.largest}
-            color={viewColors[0]}
+            color={viewColors.pop()}
           >
             {viewChildren[0] && viewChildren[0]}
           </BlockView>
@@ -94,6 +94,7 @@ export default function FibonacciView({
             orientation={orientation}
             _className="topRight"
             viewType={ViewType.medium}
+            color={viewColors.pop()}
           >
             {viewChildren[1] && viewChildren[1]}
           </BlockView>
@@ -104,6 +105,7 @@ export default function FibonacciView({
           orientation={orientation}
           _className="bottomRight"
           viewType={ViewType.small}
+          color={viewColors.pop()}
         >
           {viewChildren.length > 3 && (
             <FibonacciView
@@ -111,6 +113,7 @@ export default function FibonacciView({
               _flip={true}
               width={`calc(${smallViewWidth}px * 1)`}
               height={`calc(${smallViewHeight}px * 1)`}
+              colors={viewColors}
             >
               {viewChildren.slice(2, viewChildren.length)}
             </FibonacciView>
@@ -127,6 +130,7 @@ export default function FibonacciView({
             orientation={orientation}
             _className="topRight"
             viewType={ViewType.medium}
+            color={viewColors.pop()}
           >
             {viewChildren[1] && viewChildren[1]}
           </BlockView>
@@ -141,6 +145,7 @@ export default function FibonacciView({
           orientation={orientation}
           _className="leftCol"
           viewType={ViewType.largest}
+          color={viewColors.pop()}
         >
           {viewChildren[0] && viewChildren[0]}
         </BlockView>

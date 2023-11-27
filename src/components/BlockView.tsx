@@ -69,9 +69,7 @@ export default function BlockView({
   viewType,
   color,
 }: PropsWithChildren<BlockViewProps>) {
-  // console.log("Size: ", orientView(orientation, viewType))
   const { width, height } = orientView(orientation, viewType);
-  console.log("Color: ", color)
   return (
     <div
       className={_className}
