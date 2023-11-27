@@ -20,11 +20,11 @@ export default function Home() {
   const [width, setWidth] = useState<number>(500);
   const [height, setHeight] = useState<number>(500);
   useEffect(() => {
-    // console.log("Width: ", fibRef.current?.offsetWidth);
-    // console.log("Height: ", fibRef.current?.offsetHeight);
     setWidth(fibRef.current?.offsetWidth ?? 500);
     setHeight(fibRef.current?.offsetHeight ?? 500);
   }, [fibRef]);
+  // 642.938
+  // 279.281
   return (
     <>
       <Head>
@@ -63,13 +63,7 @@ export default function Home() {
                 style={{ width: "100%", height: "100%" }}
                 src="/upsplash/horizontal_2.jpg"
               /> */}
-          <div
-            style={{
-              height: "100%",
-              width: "100%",
-              
-            }}
-          ></div>
+
           <div
             style={{
               height: "100%",
@@ -82,13 +76,44 @@ export default function Home() {
               width: "100%",
             }}
           ></div>
-                    <div
+          <div
             style={{
               height: "100%",
               width: "100%",
             }}
           ></div>
-                              <div
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          ></div>
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          ></div>
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          ></div>
+
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          ></div>
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          ></div>
+          <div
             style={{
               height: "100%",
               width: "100%",
