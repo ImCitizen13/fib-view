@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import FibonacciView from "~/components/FibonacciView";
 import { OrientationEnum } from "~/components/types";
