@@ -6,7 +6,7 @@ import {
   useRef,
   useEffect,
 } from "react";
-import BlockView, { orientView } from "./BlockView";
+import BlockView, { BlockStyle, orientView } from "./BlockView";
 import { OrientationEnum, ViewResolution, ViewType } from "./types";
 import { getRandomColor } from "./colors";
 
@@ -79,7 +79,7 @@ export default function FibonacciView({
         <>
           <BlockView
             orientation={orientation}
-            _className="leftCol"
+            _className={BlockStyle.leftCol}
             viewType={ViewType.largest}
             color={viewColors.pop()}
           >
@@ -89,10 +89,14 @@ export default function FibonacciView({
       )}
 
       {/* Large View */}
+
       <div
-        className="rightCol"
         ref={smallViewRef}
-        style={orientView(orientation, ViewType.large)}
+        style={{
+          ...BlockStyle.rightCol,
+          ...orientView(orientation, ViewType.large),
+          flexWrap: "wrap",
+        }}
       >
         {/* Medium View */}
         {((orientation === OrientationEnum.horizontal && !flip) ||
@@ -100,7 +104,7 @@ export default function FibonacciView({
           orientation === OrientationEnum.vertical) && (
           <BlockView
             orientation={orientation}
-            _className="topRight"
+            _className={BlockStyle.topRight}
             viewType={ViewType.medium}
             color={viewColors.pop()}
           >
@@ -111,7 +115,7 @@ export default function FibonacciView({
         {/* Small View */}
         <BlockView
           orientation={orientation}
-          _className="bottomRight"
+          _className={BlockStyle.bottomRight}
           viewType={ViewType.small}
           color={viewColors.pop()}
         >
@@ -136,7 +140,7 @@ export default function FibonacciView({
           (orientation === OrientationEnum.horizontal && flip)) && (
           <BlockView
             orientation={orientation}
-            _className="topRight"
+            _className={BlockStyle.topRight}
             viewType={ViewType.medium}
             color={viewColors.pop()}
           >
@@ -151,7 +155,7 @@ export default function FibonacciView({
         (orientation === OrientationEnum.verticalReverse && flip)) && (
         <BlockView
           orientation={orientation}
-          _className="leftCol"
+          _className={BlockStyle.leftCol}
           viewType={ViewType.largest}
           color={viewColors.pop()}
         >
