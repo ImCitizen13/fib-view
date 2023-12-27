@@ -7,7 +7,7 @@ import {
   useEffect,
 } from "react";
 import BlockView, { orientView } from "./BlockView";
-import { OrientationEnum, ViewType } from "./types";
+import { OrientationEnum, ViewResolution, ViewType } from "./types";
 import { getRandomColor } from "./colors";
 
 export type FibonacciViewProps = {
@@ -41,7 +41,7 @@ export default function FibonacciView({
   _flip = false,
   width,
   height,
-  colors
+  colors,
 }: PropsWithChildren<FibonacciViewProps>) {
   const viewChildren = Children.toArray(children);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -49,14 +49,22 @@ export default function FibonacciView({
   const smallViewRef = useRef<HTMLDivElement>(null);
   const [smallViewWidth, setSmallViewWidth] = useState<number>(0);
   const [smallViewHeight, setSmallViewHeight] = useState<number>(0);
-  const viewColors =  colors ?? getRandomColor()
-  
+  const viewColors = colors ?? getRandomColor();
+  const [nextFibResolution, setNextFibResolution] = useState<ViewResolution>({
+    width: "100%",
+    height: "100%",
+  });
+
   //useLayoutEffect is on the server or something
   useEffect(() => {
-    // console.log("Width: ", smallViewRef.current?.offsetWidth);
-    // console.log("Height: ", smallViewRef.current?.offsetHeight);
+    console.log("View Percentages: ", orientView(orientation, ViewType.small));
+    const percentages = orientView(orientation, ViewType.small);
     setSmallViewWidth(smallViewRef.current?.offsetWidth ?? 500);
     setSmallViewHeight(smallViewRef.current?.offsetHeight ?? 500);
+    setNextFibResolution({
+      width: `calc(${smallViewWidth}px * ${percentages.width})`,
+      height: `calc(${smallViewHeight}px * ${percentages.height})`,
+    });
   }, [smallViewRef]);
 
   return (
@@ -83,7 +91,7 @@ export default function FibonacciView({
       {/* Large View */}
       <div
         className="rightCol"
-        // ref={smallViewRef}
+        ref={smallViewRef}
         style={orientView(orientation, ViewType.large)}
       >
         {/* Medium View */}
@@ -111,8 +119,8 @@ export default function FibonacciView({
             <FibonacciView
               orientation={OrientationEnum.horizontalReverse}
               _flip={true}
-              width={`calc(${smallViewWidth}px * 1)`}
-              height={`calc(${smallViewHeight}px * 1)`}
+              width={nextFibResolution.width}
+              height={nextFibResolution.height}
               colors={viewColors}
             >
               {viewChildren.slice(2, viewChildren.length)}
