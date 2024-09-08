@@ -1,4 +1,4 @@
-import { type BlockStyle } from "./BlockView";
+import { BlockStyle } from "./BlockView";
 
 export enum OrientationEnum {
   horizontal = "Horizontal",
