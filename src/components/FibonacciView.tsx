@@ -6,8 +6,8 @@ import {
   useRef,
   useEffect,
 } from "react";
-import BlockView, { orientView } from "./BlockView";
-import { OrientationEnum, ViewResolution, ViewType } from "./types";
+import BlockView, { BlockStyle, orientView } from "./BlockView";
+import { OrientationEnum, type ViewResolution, ViewType } from "./types";
 import { getRandomColor } from "./colors";
 
 export type FibonacciViewProps = {
