@@ -63,7 +63,7 @@ export default function Home() {
                 style={{ width: "100%", height: "100%" }}
                 src="/upsplash/horizontal_2.jpg"
               /> */}
-          <div
+          {/* <div
             style={{
               height: "100%",
               width: "100%",
@@ -92,8 +92,8 @@ export default function Home() {
             style={{
               height: "100%",
               width: "100%",
-            }}
-          ></div>
+            }} >*/}
+          {/* </div> */}
         </FibonacciView>
       </main>
     </>
