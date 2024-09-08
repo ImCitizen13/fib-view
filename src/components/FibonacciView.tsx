@@ -79,7 +79,7 @@ export default function FibonacciView({
         <>
           <BlockView
             orientation={orientation}
-            _className={BlockStyle.leftCol}
+            _className="leftCol"
             viewType={ViewType.largest}
             color={viewColors.pop()}
           >
@@ -89,14 +89,10 @@ export default function FibonacciView({
       )}
 
       {/* Large View */}
-
       <div
+        className="rightCol"
         ref={smallViewRef}
-        style={{
-          ...BlockStyle.rightCol,
-          ...orientView(orientation, ViewType.large),
-          flexWrap: "wrap",
-        }}
+        style={orientView(orientation, ViewType.large)}
       >
         {/* Medium View */}
         {((orientation === OrientationEnum.horizontal && !flip) ||
@@ -104,7 +100,7 @@ export default function FibonacciView({
           orientation === OrientationEnum.vertical) && (
           <BlockView
             orientation={orientation}
-            _className={BlockStyle.topRight}
+            _className="topRight"
             viewType={ViewType.medium}
             color={viewColors.pop()}
           >
@@ -115,7 +111,7 @@ export default function FibonacciView({
         {/* Small View */}
         <BlockView
           orientation={orientation}
-          _className={BlockStyle.bottomRight}
+          _className="bottomRight"
           viewType={ViewType.small}
           color={viewColors.pop()}
         >
@@ -140,7 +136,7 @@ export default function FibonacciView({
           (orientation === OrientationEnum.horizontal && flip)) && (
           <BlockView
             orientation={orientation}
-            _className={BlockStyle.topRight}
+            _className="topRight"
             viewType={ViewType.medium}
             color={viewColors.pop()}
           >
@@ -155,7 +151,7 @@ export default function FibonacciView({
         (orientation === OrientationEnum.verticalReverse && flip)) && (
         <BlockView
           orientation={orientation}
-          _className={BlockStyle.leftCol}
+          _className="leftCol"
           viewType={ViewType.largest}
           color={viewColors.pop()}
         >

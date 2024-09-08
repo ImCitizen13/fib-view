@@ -36,7 +36,7 @@ export const FIB_VIEW_PERCENTAGES: ViewPercentages = {
 export type BlockViewProps = {
   orientation: OrientationEnum;
   ParentViewResolution?: ViewResolution;
-  _className: BlockStyle;
+  _className: string;
   viewType: ViewType;
   color?: string;
   // _ref?: RefObject<HTMLDivElement>

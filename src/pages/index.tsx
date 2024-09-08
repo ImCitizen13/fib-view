@@ -82,8 +82,6 @@ export default function Home() {
           Random Orientation
         </button>
         <h1>{toggleOrientation}</h1>
-        {/* // width: "960px", height: "720px"
-    // return { width: "480px", height: "360px" }; */}
         <FibonacciView
           // _flip={true}
           orientation={toggleOrientation}
@@ -103,19 +101,6 @@ export default function Home() {
             />;
           })}
           </>
-          {/* <Image
-            height={360}
-            width={480}
-            alt="Upsplash"
-            style={{ width: "100%", height: "100%" }}
-            src={getRandomImage()}
-          /> */}
-          {/* <div
-            style={{
-              height: "100%",
-              width: "100%",
-            }}
-          ></div> */}
         </FibonacciView>
       </main>
     </>
