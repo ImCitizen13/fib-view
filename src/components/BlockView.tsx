@@ -107,12 +107,8 @@ export default function BlockView({
   const { width, height } = orientView(orientation, viewType);
   return (
     <div
-      style={{
-        ..._className,
-        width: width,
-        height: height,
-        // background: color
-      }}
+      className={_className}
+      style={{ width: width, height: height, background: color }}
     >
       {children}
     </div>

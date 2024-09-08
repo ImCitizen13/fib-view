@@ -15,8 +15,6 @@ const COLOR_PALETTES = [
   ["#FFE0A3", "#E18237", "#943939", "#6A2634"],
 ];
 
-const transparent = Array<string>(20).fill("rgba(0,0,0,0)")
-
 const ALL_COLORS: string[] = COLOR_PALETTES.reduce((prevColors, current) => {
   return prevColors.concat(current);
 });
