@@ -82,27 +82,12 @@ export default function Home() {
           Random Orientation
         </button>
         <h1>{toggleOrientation}</h1>
-        {/* // width: "960px", height: "720px"
-    // return { width: "480px", height: "360px" }; */}
         <FibonacciView
           // _flip={true}
           orientation={toggleOrientation}
           width={`calc(${width}px * 0.9)`}
           height={`calc(${height}px * 0.75)`}
         >
-          <>
-          
-          {// eslint-disable-next-line @typescript-eslint/no-unsafe-call
-          rands.map((img: string) => {
-            <Image
-              height={360}
-              width={480}
-              alt="Upsplash"
-              style={{ width: "100%", height: "100%" }}
-              src={img}
-            />;
-          })}
-          </>
           {/* <Image
                 height={360}
                 width={480}
