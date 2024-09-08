@@ -64,12 +64,12 @@ export function orientView(
 
 export class BlockStyle {
   static readonly leftCol = {
-    // backgroundColor: "#FBAEAB",
+    backgroundColor: "#FBAEAB",
     height: "100vh",
     width: "62.5%",
   };
   static readonly rightCol = {
-    // backgroundColor: "#EED1B2",
+    backgroundColor: "#EED1B2",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -77,13 +77,13 @@ export class BlockStyle {
     width: "37.5%",
   };
   static readonly topRight = {
-    // backgroundColor: "#EED1B2",
+    backgroundColor: "#EED1B2",
     minHeight: "62.5%",
     width: "100vw",
   };
 
   static readonly bottomRight = {
-    // backgroundColor: "#13C5CD",
+    backgroundColor: "#13C5CD",
     height: "37.5%",
     width: "100vw",
   };

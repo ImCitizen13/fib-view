@@ -22,6 +22,6 @@ const ALL_COLORS: string[] = COLOR_PALETTES.reduce((prevColors, current) => {
 });
 
 export function getRandomColor(): string[] {
-  // return ALL_COLORS;
-  return transparent
+  return ALL_COLORS;
+  // return transparent
 }
