@@ -1,3 +1,5 @@
+import { BlockStyle } from "./BlockView";
+
 export enum OrientationEnum {
   horizontal = "Horizontal",
   vertical = "Vertical",
