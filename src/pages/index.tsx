@@ -104,18 +104,43 @@ export default function Home() {
           })}
           </>
           {/* <Image
-            height={360}
-            width={480}
-            alt="Upsplash"
-            style={{ width: "100%", height: "100%" }}
-            src={getRandomImage()}
-          /> */}
+                height={360}
+                width={480}
+                alt="Upsplash"
+                style={{ width: "100%", height: "100%" }}
+                src="/upsplash/horizontal_2.jpg"
+              /> */}
           {/* <div
             style={{
               height: "100%",
               width: "100%",
+              
             }}
-          ></div> */}
+          ></div>
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          ></div>
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          ></div>
+                    <div
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          ></div>
+                              <div
+            style={{
+              height: "100%",
+              width: "100%",
+            }} >*/}
+          {/* </div> */}
         </FibonacciView>
       </main>
     </>
