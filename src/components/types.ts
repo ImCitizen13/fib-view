@@ -1,5 +1,3 @@
-import { type BlockStyle } from "./BlockView";
-
 export enum OrientationEnum {
   horizontal = "Horizontal",
   vertical = "Vertical",
@@ -36,7 +34,7 @@ export const FIB_VIEW_PERCENTAGES: ViewPercentages = {
 export type BlockViewProps = {
   orientation: OrientationEnum;
   ParentViewResolution?: ViewResolution;
-  _className: BlockStyle;
+  _className: string;
   viewType: ViewType;
   color?: string;
   // _ref?: RefObject<HTMLDivElement>
