@@ -20,8 +20,6 @@ export default function Home() {
   const [width, setWidth] = useState<number>(500);
   const [height, setHeight] = useState<number>(500);
   useEffect(() => {
-    // console.log("Width: ", fibRef.current?.offsetWidth);
-    // console.log("Height: ", fibRef.current?.offsetHeight);
     setWidth(fibRef.current?.offsetWidth ?? 500);
     setHeight(fibRef.current?.offsetHeight ?? 500);
   }, [fibRef]);
@@ -48,52 +46,12 @@ export default function Home() {
           Random Orientation
         </button>
         <h1>{toggleOrientation}</h1>
-        {/* // width: "960px", height: "720px"
-    // return { width: "480px", height: "360px" }; */}
         <FibonacciView
           // _flip={true}
           orientation={toggleOrientation}
           width={`calc(${width}px * 0.9)`}
           height={`calc(${height}px * 0.75)`}
         >
-          {/* <Image
-                height={360}
-                width={480}
-                alt="Upsplash"
-                style={{ width: "100%", height: "100%" }}
-                src="/upsplash/horizontal_2.jpg"
-              /> */}
-          {/* <div
-            style={{
-              height: "100%",
-              width: "100%",
-              
-            }}
-          ></div>
-          <div
-            style={{
-              height: "100%",
-              width: "100%",
-            }}
-          ></div>
-          <div
-            style={{
-              height: "100%",
-              width: "100%",
-            }}
-          ></div>
-                    <div
-            style={{
-              height: "100%",
-              width: "100%",
-            }}
-          ></div>
-                              <div
-            style={{
-              height: "100%",
-              width: "100%",
-            }} >*/}
-          {/* </div> */}
         </FibonacciView>
       </main>
     </>
