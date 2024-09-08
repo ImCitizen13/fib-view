@@ -23,42 +23,6 @@ export default function Home() {
     setWidth(fibRef.current?.offsetWidth ?? 500);
     setHeight(fibRef.current?.offsetHeight ?? 500);
   }, [fibRef]);
-  // 642.938
-  // 279.281
-  const getRandomImage = (): string => {
-    const imgUrls = [
-      "/upsplash/horizontal_1.jpg",
-      "/upsplash/horizontal_2.jpg",
-      "/upsplash/horizontal_3.jpg",
-      "/upsplash/horizontal_4.jpg",
-      "/upsplash/horizontal_5.jpg",
-      "/upsplash/horizontal_6.jpg",
-      "/upsplash/horizontal_7.jpg",
-      "/upsplash/horizontal_8.jpg",
-      "/upsplash/horizontal_9.jpg",
-      "/upsplash/vertical_1.jpg",
-      "/upsplash/vertical_2.jpg",
-      "/upsplash/vertical_3.jpg",
-      "/upsplash/vertical_4.jpg",
-      "/upsplash/vertical_5.jpg",
-      "/upsplash/vertical_6.jpg",
-      "/upsplash/vertical_7.jpg",
-    ];
-    const rand = Math.floor(Math.random() * imgUrls.length);
-    const res = imgUrls[rand] ?? "";
-    console.log("Random Numaber: ", rand);
-    console.log("Result image: ", res);
-    return res;
-  };
-
-  const getRandomImages = (): string[] => {
-    const randomImages:string[] = [] ;
-    for (let i = 0; i < 10; i++) {
-      randomImages.push(getRandomImage());
-    }
-    return randomImages;
-  };
-  const rands = getRandomImages()
   return (
     <>
       <Head>
@@ -88,19 +52,6 @@ export default function Home() {
           width={`calc(${width}px * 0.9)`}
           height={`calc(${height}px * 0.75)`}
         >
-          <>
-          
-          {// eslint-disable-next-line @typescript-eslint/no-unsafe-call
-          rands.map((img: string) => {
-            <Image
-              height={360}
-              width={480}
-              alt="Upsplash"
-              style={{ width: "100%", height: "100%" }}
-              src={img}
-            />;
-          })}
-          </>
         </FibonacciView>
       </main>
     </>
