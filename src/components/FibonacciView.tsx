@@ -17,6 +17,8 @@ export type FibonacciViewProps = {
   width: string;
   height: string;
   colors?: string[];
+  bgColor?: string;
+
 };
 
 function getOrientedViewResolution(
@@ -42,6 +44,7 @@ export default function FibonacciView({
   width,
   height,
   colors,
+  bgColor,
 }: PropsWithChildren<FibonacciViewProps>) {
   const viewChildren = Children.toArray(children);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -49,7 +52,7 @@ export default function FibonacciView({
   const smallViewRef = useRef<HTMLDivElement>(null);
   const [smallViewWidth, setSmallViewWidth] = useState<number>(0);
   const [smallViewHeight, setSmallViewHeight] = useState<number>(0);
-  const viewColors = colors ?? getRandomColor();
+  const viewColors = (bgColor ? [bgColor] : colors) ?? getRandomColor();
   const [nextFibResolution, setNextFibResolution] = useState<ViewResolution>({
     width: "100%",
     height: "100%",
@@ -81,7 +84,7 @@ export default function FibonacciView({
             orientation={orientation}
             _className="leftCol"
             viewType={ViewType.largest}
-            color={viewColors.pop()}
+            color={bgColor ?? (Array.isArray(viewColors) ? viewColors[0] : viewColors)}
           >
             {viewChildren[0] && viewChildren[0]}
           </BlockView>
@@ -102,7 +105,7 @@ export default function FibonacciView({
             orientation={orientation}
             _className="topRight"
             viewType={ViewType.medium}
-            color={viewColors.pop()}
+            color={bgColor ?? (Array.isArray(viewColors) ? viewColors[0] : viewColors)}
           >
             {viewChildren[1] && viewChildren[1]}
           </BlockView>
@@ -113,7 +116,7 @@ export default function FibonacciView({
           orientation={orientation}
           _className="bottomRight"
           viewType={ViewType.small}
-          color={viewColors.pop()}
+          color={bgColor ?? (Array.isArray(viewColors) ? viewColors[0] : viewColors)}
         >
           {viewChildren.length > 3 && (
             <FibonacciView
@@ -122,6 +125,7 @@ export default function FibonacciView({
               width={nextFibResolution.width}
               height={nextFibResolution.height}
               colors={viewColors}
+              bgColor={bgColor}
             >
               {viewChildren.slice(2, viewChildren.length)}
             </FibonacciView>
@@ -138,7 +142,7 @@ export default function FibonacciView({
             orientation={orientation}
             _className="topRight"
             viewType={ViewType.medium}
-            color={viewColors.pop()}
+            color={bgColor ?? (Array.isArray(viewColors) ? viewColors[0] : viewColors)}
           >
             {viewChildren[1] && viewChildren[1]}
           </BlockView>
@@ -153,7 +157,7 @@ export default function FibonacciView({
           orientation={orientation}
           _className="leftCol"
           viewType={ViewType.largest}
-          color={viewColors.pop()}
+          color={bgColor ?? (Array.isArray(viewColors) ? viewColors[0] : viewColors)}
         >
           {viewChildren[0] && viewChildren[0]}
         </BlockView>
