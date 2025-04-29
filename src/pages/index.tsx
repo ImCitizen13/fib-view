@@ -10,17 +10,29 @@ import { Orientations } from "./showcase2";
 const formStyles: {
   container: React.CSSProperties;
   input: React.CSSProperties;
+  label: React.CSSProperties;
+  button: React.CSSProperties;
 } = {
   container: {
     display: "flex",
     flexDirection: "column",
     gap: "20px",
     padding: "30px",
+    fontFamily: "monospace",
     backgroundColor: "#0000",
     borderRadius: "12px",
     border: "1px solid #ffffff",
     width: "80%",
     maxWidth: "400px",
+  },
+  label: {
+    padding: "12px",
+    backgroundColor: "#0000",
+    color: "#fff",
+    fontSize: "20px",
+    fontFamily: "monospace",
+    outline: "none",
+    transition: "all 0.3s ease",
   },
   input: {
     padding: "12px",
@@ -29,9 +41,23 @@ const formStyles: {
     borderRadius: "6px",
     color: "#fff",
     fontSize: "16px",
+    fontFamily: "monospace",
     outline: "none",
     transition: "all 0.3s ease",
   },
+  button: {
+    width: "30%",
+    height: "50px",
+    backgroundColor: "#0000",
+    color: "#fff",
+    border: "1px solid #ffffff",
+    borderRadius: "8px",
+    cursor: "pointer",
+    transition: "all 0.3s ease",
+    fontSize: "16px",
+    fontWeight: "bold",
+    fontFamily: "monospace",
+  }
 };
 
 export default function OOpepen() {
@@ -152,10 +178,11 @@ export default function OOpepen() {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              gap: 50
+              gap: 50,
             }}
           >
             <form style={formStyles.container}>
+              <label style={formStyles.label}>First Image URL</label>
               <input
                 type="text"
                 placeholder="First Image URL"
@@ -171,6 +198,7 @@ export default function OOpepen() {
                     "0 0 10px #ffffff, inset 0 0 5px #ffffff";
                 }}
               />
+              <label style={formStyles.label}>Second Image URL</label>
               <input
                 type="text"
                 placeholder="Second Image URL"
@@ -186,6 +214,7 @@ export default function OOpepen() {
                     "0 0 10px #ffffff, inset 0 0 5px #ffffff";
                 }}
               />
+              <label style={formStyles.label}>Third Image URL</label>
               <input
                 type="text"
                 placeholder="Third Image URL"
@@ -203,18 +232,7 @@ export default function OOpepen() {
               />
             </form>
             <button
-              style={{
-                width: "30%",
-                height: "50px",
-                backgroundColor: "#0000",
-                color: "#fff",
-                border: "1px solid #ffffff",
-                borderRadius: "8px",
-                cursor: "pointer",
-                transition: "all 0.3s ease",
-                fontSize: "16px",
-                fontWeight: "bold",
-              }}
+              style={formStyles.button}
               onMouseOver={(e) => {
                 e.currentTarget.style.transform = "scale(1.05)";
               }}
@@ -245,12 +263,13 @@ export default function OOpepen() {
           >
             <h1
               style={{
-                fontSize: "4rem",
+                fontSize: "2.5rem",
                 color: "#fff",
                 borderRadius: "12px",
                 margin: 0,
                 fontWeight: "bold",
                 letterSpacing: "2px",
+                fontFamily: "monospace",
               }}
             >
               FibonacciGrid

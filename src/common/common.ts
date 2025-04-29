@@ -1,0 +1,18 @@
+export const imgUrls = [
+    "/upsplash/horizontal_1.jpg",
+    "/upsplash/horizontal_2.jpg",
+    "/upsplash/horizontal_3.jpg",
+    "/upsplash/horizontal_4.jpg",
+    "/upsplash/horizontal_5.jpg",
+    "/upsplash/horizontal_6.jpg",
+    "/upsplash/horizontal_7.jpg",
+    "/upsplash/horizontal_8.jpg",
+    "/upsplash/horizontal_9.jpg",
+    "/upsplash/vertical_1.jpg",
+    "/upsplash/vertical_2.jpg",
+    "/upsplash/vertical_3.jpg",
+    "/upsplash/vertical_4.jpg",
+    "/upsplash/vertical_5.jpg",
+    "/upsplash/vertical_6.jpg",
+    "/upsplash/vertical_7.jpg",
+  ];
