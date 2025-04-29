@@ -11,7 +11,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <title>FibView</title>
         <meta
           name="description"
-          content="This site is to honor Opepen nft by Jack Butcher that was inspired by the work of batz"
+          content="This site is to showcase the Fibonacci View component"
         />
         <link rel="icon" href="/favicon.ico" />
         <link
